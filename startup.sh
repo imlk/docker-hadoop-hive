@@ -31,6 +31,8 @@ if [[ $1 == "-bash" ]]; then
   /bin/bash
 fi
 
+hdfs dfsadmin -safemode leave
+
 # Initiating for Hive
 hadoop fs -mkdir       /tmp
 hadoop fs -mkdir -p    /user/hive/warehouse
