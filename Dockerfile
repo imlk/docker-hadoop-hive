@@ -1,13 +1,11 @@
-FROM falkonry/docker-hadoop:latest
-
-RUN /etc/bootstrap.sh -d
+FROM falkonry/hadoop:latest
 
 ENV HIVE_VERSION 2.1.1
 ENV SPARK_VERSION 1.6.0
 
 ENV HIVE_HOME /usr/local/hive
-ENV PATH $HIVE_HOME/bin:$PATH
 ENV HADOOP_HOME $HADOOP_PREFIX
+ENV PATH $HADOOP_HOME/bin:$HIVE_HOME/bin:$PATH
 
 WORKDIR /usr/local
 
